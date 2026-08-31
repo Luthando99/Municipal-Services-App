@@ -1,11 +1,12 @@
-Municipal Services Application
+# Municipal Services Application
 
 A C# Windows Forms application developed to provide citizens with a simple and user-friendly way to interact with municipal services.
 
 This repository currently contains **Part 1** of the Municipal Services Application, which focuses on allowing users to report municipal issues such as potholes, water problems, electricity faults, waste collection issues, damaged public facilities, and other service-related concerns.
 
+---
 
-Project Overview
+## Project Overview
 
 The Municipal Services Application is designed around a South African municipal service-delivery context.
 
@@ -13,10 +14,11 @@ Part 1 introduces the **Report Issues** feature. Citizens can provide informatio
 
 The application also incorporates user-engagement features such as progress feedback and contextual messages to guide users through the reporting process.
 
+---
 
-Current Features
+## Current Features
 
-Main Menu
+### Main Menu
 
 The application provides a central navigation screen containing:
 
@@ -24,11 +26,11 @@ The application provides a central navigation screen containing:
 - Local Events and Announcements
 - Service Request Status
 
-For Part 1, Report Issues is active.
+For Part 1, **Report Issues** is active.
 
 The Local Events and Announcements and Service Request Status options are displayed but disabled because they will be implemented in later parts of the project.
 
-Report an Issue
+### Report an Issue
 
 Users can submit a municipal issue by providing:
 
@@ -48,7 +50,7 @@ Available categories include:
 - Public Facilities
 - Other
 
-Supporting Evidence
+### Supporting Evidence
 
 Users can optionally attach supporting documentation relating to the reported issue.
 
@@ -62,7 +64,7 @@ Supported file types include:
 
 The selected filename is displayed on the form before the report is submitted.
 
-User Engagement and Progress Feedback
+### User Engagement and Progress Feedback
 
 The application includes a progress bar that responds as the user completes the report.
 
@@ -80,7 +82,7 @@ Contextual messages guide the user through the process, for example:
 
 This provides immediate feedback and makes the reporting process easier to follow.
 
-Input Validation
+### Input Validation
 
 The application validates required information before accepting a report.
 
@@ -94,9 +96,9 @@ Supporting evidence is optional.
 
 Users receive appropriate feedback when required information has not been provided.
 
-Report Storage
+### Report Storage
 
-Submitted reports are represented using an "Issue" model and stored during runtime using an in-memory collection managed by "IssueRepository".
+Submitted reports are represented using an `Issue` model and stored during runtime using an in-memory collection managed by `IssueRepository`.
 
 Each report contains information such as:
 
@@ -108,8 +110,9 @@ Each report contains information such as:
 
 After a successful submission, the application confirms that the issue has been stored and resets the reporting form for another submission.
 
+---
 
-Technologies Used
+## Technologies Used
 
 - C#
 - .NET Framework
@@ -118,8 +121,9 @@ Technologies Used
 - Git
 - GitHub
 
+---
 
-Project Structure
+## Project Structure
 
 ```text
 MunicipalServicesApp/
@@ -144,10 +148,11 @@ MunicipalServicesApp/
 
 Generated Visual Studio folders such as `.vs`, `bin`, and `obj` are excluded from the repository using `.gitignore`.
 
+---
 
-How to Run the Application
+## How to Run the Application
 
-Requirements
+### Requirements
 
 To open and run the project, you will need:
 
@@ -155,7 +160,7 @@ To open and run the project, you will need:
 - Visual Studio
 - .NET Framework development support
 
-Running the Project
+### Running the Project
 
 1. Clone or download this repository.
 2. Open `MunicipalServicesApp.slnx` in Visual Studio.
@@ -167,8 +172,9 @@ The Municipal Services main menu will open.
 
 Select **Report Issues** to access the issue-reporting functionality.
 
+---
 
-Using the Report Issues Feature
+## Using the Report Issues Feature
 
 1. Enter the location of the municipal issue.
 2. Select an appropriate issue category.
@@ -181,8 +187,9 @@ Using the Report Issues Feature
 
 The **Back** button returns the user to the main menu.
 
+---
 
-Data Storage
+## Data Storage
 
 Part 1 currently uses **in-memory storage**.
 
@@ -190,8 +197,9 @@ This means submitted reports remain available while the application is running b
 
 Persistent storage may be introduced as the application is expanded.
 
+---
 
-Current Limitations
+## Current Limitations
 
 This repository currently represents **Part 1** of the application.
 
@@ -203,25 +211,27 @@ Therefore:
 - There is currently no database or permanent file-based storage.
 - The application is currently designed as a Windows desktop application.
 
+---
 
-Planned Development
+## Planned Development
 
 Future development of the Municipal Services Application will introduce additional functionality.
 
-Part 2 - Local Events and Announcements
+### Part 2 — Local Events and Announcements
 
 The application will be expanded to provide access to local events and municipal announcements.
 
 This phase will introduce additional data structures and functionality for organising, searching, and recommending information.
 
-Part 3 - Service Request Status
+### Part 3 — Service Request Status
 
 The final phase will introduce functionality for tracking municipal service requests.
 
 This phase will expand the application through more advanced data structures and service-request management functionality.
 
+---
 
-User Interface
+## User Interface
 
 The application has been designed with usability and simplicity in mind.
 
@@ -236,26 +246,29 @@ Part 1 provides:
 - Confirmation messages
 - Simple navigation between application screens
 
+---
 
-Development Status
+## Development Status
 
-Part 1 - Report Issues: COMPLETE 
+**Part 1 — Report Issues: COMPLETE ✅**
 
-Part 2 - Local Events and Announcements: Planned
+**Part 2 — Local Events and Announcements: Planned**
 
-Part 3 - Service Request Status: Planned
+**Part 3 — Service Request Status: Planned**
 
+---
 
-Repository Notes
+## Repository Notes
 
 Visual Studio-generated development files and build outputs are excluded through `.gitignore`.
 
 This keeps the repository focused on the source code and files required to build and understand the application.
 
+---
 
-Author
+## Author
 
-Millennium Msomi
+**Luthando Mtolo**
 
 Municipal Services Application  
 C# / .NET Framework / Windows Forms
