@@ -1,0 +1,68 @@
+# ============================================
+# Municipal Services Application
+# Visual Studio / C# .NET Framework
+# ============================================
+
+# Visual Studio user-specific files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# Visual Studio cache/options
+*.VC.db
+*.VC.VC.opendb
+*.opendb
+
+# Generated debugging files
+*.pdb
+*.ilk
+
+# Test results
+TestResults/
+[Tt]est[Rr]esult*/
+*.trx
+
+# NuGet
+packages/
+*.nupkg
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.tlog
+
+# Windows files
+Thumbs.db
+Desktop.ini
+
+# ReSharper / JetBrains
+_ReSharper*/
+*.DotSettings.user
+
+# VS Code (if used later)
+.vscode/
+
+# ============================================
+# IMPORTANT:
+# Do NOT ignore source code or documentation
+# ============================================
+
+# Keep:
+# *.cs
+# *.csproj
+# *.sln / *.slnx
+# *.resx
+# App.config
+# README files
+# Documentation
