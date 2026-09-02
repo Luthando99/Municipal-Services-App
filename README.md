@@ -268,7 +268,7 @@ This keeps the repository focused on the source code and files required to build
 
 ## Author
 
-**Luthando Mtolo**
+**Millennium Msomi**
 
 Municipal Services Application  
 C# / .NET Framework / Windows Forms
