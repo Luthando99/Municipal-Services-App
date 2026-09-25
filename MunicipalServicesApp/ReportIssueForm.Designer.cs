@@ -53,7 +53,7 @@
             this.cmbCategory.Location = new System.Drawing.Point(82, 163);
             this.cmbCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(363, 31);
+            this.cmbCategory.Size = new System.Drawing.Size(463, 31);
             this.cmbCategory.TabIndex = 2;
             this.cmbCategory.SelectedIndexChanged += new System.EventHandler(this.cmbCategory_SelectedIndexChanged);
             // 
@@ -64,7 +64,7 @@
             this.rtbDescription.Location = new System.Drawing.Point(82, 237);
             this.rtbDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtbDescription.Name = "rtbDescription";
-            this.rtbDescription.Size = new System.Drawing.Size(604, 70);
+            this.rtbDescription.Size = new System.Drawing.Size(704, 70);
             this.rtbDescription.TabIndex = 3;
             this.rtbDescription.Text = "";
             this.rtbDescription.TextChanged += new System.EventHandler(this.rtbDescription_TextChanged);
@@ -77,7 +77,7 @@
             this.btnAttachFile.Location = new System.Drawing.Point(82, 349);
             this.btnAttachFile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAttachFile.Name = "btnAttachFile";
-            this.btnAttachFile.Size = new System.Drawing.Size(152, 40);
+            this.btnAttachFile.Size = new System.Drawing.Size(252, 40);
             this.btnAttachFile.TabIndex = 4;
             this.btnAttachFile.Text = "Attachment";
             this.btnAttachFile.UseVisualStyleBackColor = true;
@@ -87,17 +87,18 @@
             // 
             this.progressReport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressReport.ForeColor = System.Drawing.Color.MidnightBlue;
             this.progressReport.Location = new System.Drawing.Point(82, 447);
             this.progressReport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.progressReport.Name = "progressReport";
-            this.progressReport.Size = new System.Drawing.Size(604, 33);
+            this.progressReport.Size = new System.Drawing.Size(704, 33);
             this.progressReport.TabIndex = 5;
             // 
             // lblAttachment
             // 
             this.lblAttachment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAttachment.AutoSize = true;
-            this.lblAttachment.Location = new System.Drawing.Point(240, 366);
+            this.lblAttachment.Location = new System.Drawing.Point(340, 366);
             this.lblAttachment.Name = "lblAttachment";
             this.lblAttachment.Size = new System.Drawing.Size(101, 23);
             this.lblAttachment.TabIndex = 5;
@@ -106,7 +107,7 @@
             // btnSubmit
             // 
             this.btnSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSubmit.Location = new System.Drawing.Point(469, 497);
+            this.btnSubmit.Location = new System.Drawing.Point(569, 545);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(99, 33);
@@ -119,7 +120,7 @@
             // 
             this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnBack.Location = new System.Drawing.Point(590, 497);
+            this.btnBack.Location = new System.Drawing.Point(690, 545);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(96, 32);
@@ -135,7 +136,7 @@
             this.txtLocation.Location = new System.Drawing.Point(82, 95);
             this.txtLocation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(604, 30);
+            this.txtLocation.Size = new System.Drawing.Size(704, 30);
             this.txtLocation.TabIndex = 1;
             this.txtLocation.TextChanged += new System.EventHandler(this.txtLocation_TextChanged);
             // 
@@ -189,7 +190,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(294, 20);
+            this.label5.Location = new System.Drawing.Point(338, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(241, 38);
             this.label5.TabIndex = 14;
@@ -201,7 +202,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnBack;
-            this.ClientSize = new System.Drawing.Size(782, 553);
+            this.ClientSize = new System.Drawing.Size(882, 601);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -217,6 +218,7 @@
             this.Controls.Add(this.rtbDescription);
             this.Controls.Add(this.cmbCategory);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ReportIssueForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
