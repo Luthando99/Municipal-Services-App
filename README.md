@@ -155,6 +155,16 @@ These are developer-reported functional tests; the README is not a substitute fo
 
 Possible extensions include persistent database storage, administrator workflows, file storage, user accounts, real municipal event feeds, and integration with live service-request systems. These are **not** part of the current implementation.
 
+## GitHub Repository
+
+The complete source code for the Municipal Services Application is available on GitHub.
+
+**Project Repository:** [Municipal Services Application](https://github.com/MillenniumHub21/MunicipalServicesApp)
+
+The repository contains the completed application, including Parts 1, 2, and 3, the implemented data structures and algorithms, and supporting project documentation.
+
+The repository also provides access to the project's development history through Git commits.
+
 ## Author
 
 **Millennium Msomi**
