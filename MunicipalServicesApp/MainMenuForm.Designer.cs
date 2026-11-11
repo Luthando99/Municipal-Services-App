@@ -44,7 +44,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(266, 31);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(432, 54);
+            this.lblTitle.Size = new System.Drawing.Size(347, 45);
             this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "MUNICIPAL SERVICES";
             // 
@@ -55,7 +55,7 @@
             this.lblWelcome.ForeColor = System.Drawing.Color.Gainsboro;
             this.lblWelcome.Location = new System.Drawing.Point(284, 106);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(381, 25);
+            this.lblWelcome.Size = new System.Drawing.Size(321, 20);
             this.lblWelcome.TabIndex = 0;
             this.lblWelcome.Text = "Welcome to the Municipal Services Application";
             this.lblWelcome.Click += new System.EventHandler(this.label1_Click);
@@ -96,11 +96,11 @@
             // 
             // btnServiceStatus
             // 
-            this.btnServiceStatus.BackColor = System.Drawing.Color.Gainsboro;
-            this.btnServiceStatus.Enabled = false;
+            this.btnServiceStatus.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnServiceStatus.FlatAppearance.BorderSize = 0;
             this.btnServiceStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnServiceStatus.ForeColor = System.Drawing.Color.Gray;
+            this.btnServiceStatus.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnServiceStatus.ForeColor = System.Drawing.SystemColors.Window;
             this.btnServiceStatus.Location = new System.Drawing.Point(312, 481);
             this.btnServiceStatus.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnServiceStatus.Name = "btnServiceStatus";
@@ -108,6 +108,7 @@
             this.btnServiceStatus.TabIndex = 3;
             this.btnServiceStatus.Text = "Service Request Status";
             this.btnServiceStatus.UseVisualStyleBackColor = false;
+            this.btnServiceStatus.Click += new System.EventHandler(this.btnServiceStatus_Click);
             // 
             // panel1
             // 
@@ -122,7 +123,7 @@
             // 
             // MainMenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(882, 601);

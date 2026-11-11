@@ -17,5 +17,12 @@ namespace MunicipalServicesApp.Models
         public string AttachmentPath { get; set; }
 
         public DateTime DateReported { get; set; }
+
+        
+        public string TrackingID { get; set; }
+
+        public string Status { get; set; } = "Pending";
+
+        public int Priority { get; set; }
     }
 }

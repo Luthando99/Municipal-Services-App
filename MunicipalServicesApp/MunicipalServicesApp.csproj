@@ -47,6 +47,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventRepository.cs" />
+    <Compile Include="IssueAVLTree.cs" />
+    <Compile Include="IssueBinarySearchTree.cs" />
+    <Compile Include="IssueMaxHeap.cs" />
+    <Compile Include="IssuePriorityHelper.cs" />
     <Compile Include="IssueRepository.cs" />
     <Compile Include="LocalEventsForm.cs">
       <SubType>Form</SubType>
@@ -62,6 +66,14 @@
     </Compile>
     <Compile Include="Models\Issue.cs" />
     <Compile Include="Models\MunicipalEvent.cs" />
+    <Compile Include="MunicipalGraph.cs" />
+    <Compile Include="MunicipalNetworkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MunicipalNetworkForm.Designer.cs">
+      <DependentUpon>MunicipalNetworkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MunicipalWeightedGraph.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportIssueForm.cs">
@@ -70,11 +82,20 @@
     <Compile Include="ReportIssueForm.Designer.cs">
       <DependentUpon>ReportIssueForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ServiceRequestStatusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceRequestStatusForm.Designer.cs">
+      <DependentUpon>ServiceRequestStatusForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LocalEventsForm.resx">
       <DependentUpon>LocalEventsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMenuForm.resx">
       <DependentUpon>MainMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MunicipalNetworkForm.resx">
+      <DependentUpon>MunicipalNetworkForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,6 +108,9 @@
     </Compile>
     <EmbeddedResource Include="ReportIssueForm.resx">
       <DependentUpon>ReportIssueForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceRequestStatusForm.resx">
+      <DependentUpon>ServiceRequestStatusForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -1,274 +1,162 @@
 # Municipal Services Application
 
-A C# Windows Forms application developed to provide citizens with a simple and user-friendly way to interact with municipal services.
-
-This repository currently contains **Part 1** of the Municipal Services Application, which focuses on allowing users to report municipal issues such as potholes, water problems, electricity faults, waste collection issues, damaged public facilities, and other service-related concerns.
-
----
+A desktop application built using **C#**, **Windows Forms**, and **.NET Framework 4.8** to demonstrate municipal issue reporting, community event discovery, service-request tracking, and data-structure algorithms in a South African municipal-services context.
 
 ## Project Overview
 
-The Municipal Services Application is designed around a South African municipal service-delivery context.
+The application was developed in three progressive parts:
 
-Part 1 introduces the **Report Issues** feature. Citizens can provide information about a municipal problem, select the appropriate category, describe the issue, and optionally attach supporting evidence.
+- **Part 1 — Report Issues:** Citizens submit municipal service issues with a location, category, description, and optional attachment.
+- **Part 2 — Local Events and Announcements:** Citizens browse, search, filter, and receive recommendations for community events.
+- **Part 3 — Service Request Status:** Citizens look up submitted issues, view their status, inspect priority requests, and explore a demonstration municipal network using graph algorithms.
 
-The application also incorporates user-engagement features such as progress feedback and contextual messages to guide users through the reporting process.
+All three sections are accessible from the main menu.
 
----
+## Features
 
-## Current Features
+### Part 1: Report Issues
 
-### Main Menu
+The **Report Issues** screen lets users:
 
-The application provides a central navigation screen containing:
+1. Enter the location of a municipal issue.
+2. Choose a category, such as Roads and Potholes, Water and Sanitation, Electricity, Waste Collection, Street Lights, Traffic Lights, Public Facilities, or Other.
+3. Describe the issue.
+4. Optionally select a supporting JPG, JPEG, PNG, PDF, DOC, or DOCX file.
+5. Submit the report after required-field validation.
 
-- Report Issues
-- Local Events and Announcements
-- Service Request Status
+The form displays progress feedback and guidance messages as fields are completed. On submission, it stores an `Issue` in the in-memory `IssueRepository`, displays the request's tracking ID, and resets the form for another report.
 
-For Part 1, **Report Issues** is active.
+### Part 2: Local Events and Announcements
 
-The Local Events and Announcements and Service Request Status options are displayed but disabled because they will be implemented in later parts of the project.
+The **Local Events and Announcements** screen provides:
 
-### Report an Issue
+- A list of sample municipal and community events.
+- Event details, including title, date, category, location, and description.
+- Text searching across event information.
+- Category filtering and an optional exact-date filter.
+- An event recommendation feature based on the selected category or recorded category interest.
 
-Users can submit a municipal issue by providing:
+The `EventRepository` uses a `SortedDictionary<DateTime, List<MunicipalEvent>>` to group events by date, a `HashSet<string>` for unique categories, a `Queue<MunicipalEvent>` for event ordering, and a `Dictionary<string, int>` to track category interest.
 
-- Location
-- Issue category
-- Description of the problem
-- Optional supporting evidence
+**Sample-data note:** The included events have fixed dates from October and November 2026. Recommendations only consider events whose dates have not passed, so the sample dates may need updating when demonstrating the application later.
 
-Available categories include:
+### Part 3: Service Request Status
 
-- Roads and Potholes
-- Water and Sanitation
-- Electricity
-- Waste Collection
-- Street Lights
-- Traffic Lights
-- Public Facilities
-- Other
+The **Service Request Status** screen lets users:
 
-### Supporting Evidence
+- View submitted issues in a table.
+- Search for a request using its tracking ID.
+- Select a request to view its category, location, description, submission date, and status.
+- See a progress indicator corresponding to the request's status.
+- View the highest-priority request.
+- Open the Municipal Network Analysis screen.
 
-Users can optionally attach supporting documentation relating to the reported issue.
+The status display supports the labels **Pending**, **In Progress**, **Under Review**, and **Resolved**. Newly submitted requests start in the pending state; the current application does not provide a separate administrative workflow for changing statuses.
 
-Supported file types include:
+### Municipal Network Analysis
 
-- JPG / JPEG
-- PNG
-- PDF
-- DOC
-- DOCX
+The **Municipal Network Analysis** screen provides demonstrations of:
 
-The selected filename is displayed on the form before the report is submitted.
+- **Breadth-First Search (BFS):** Visits connected locations level by level.
+- **Depth-First Search (DFS):** Explores connected paths before backtracking.
+- **Prim's Algorithm:** Constructs a minimum spanning tree for the weighted demonstration network and displays the total connection cost.
 
-### User Engagement and Progress Feedback
+Users select a starting location and run an algorithm to see the results. The example network uses **Durban, Pinetown, Umhlanga, PMB, and Ballito**. Connections and weights are illustrative test data, **not live municipal routes, distances, or infrastructure costs**.
 
-The application includes a progress bar that responds as the user completes the report.
+## Data Structures and Algorithms
 
-Contextual messages guide the user through the process, for example:
+| Structure or algorithm | Purpose in the application |
+| --- | --- |
+| `List<Issue>` | Holds reported issues during the current application session. |
+| Binary Search Tree (`IssueBinarySearchTree`) | Organises requests by tracking ID. |
+| AVL Tree (`IssueAVLTree`) | Provides balanced-tree lookup for tracking IDs. |
+| Max-Heap (`IssueMaxHeap`) | Retrieves the highest-priority request. |
+| `SortedDictionary` | Organises events by date. |
+| `HashSet` | Stores unique event categories. |
+| `Queue` | Stores events in insertion order. |
+| `Dictionary` | Tracks user interest in event categories. |
+| Adjacency-list graph (`MunicipalGraph`) | Represents connections for BFS and DFS. |
+| Weighted graph (`MunicipalWeightedGraph`) | Represents weighted connections for Prim's algorithm. |
 
-> Let's get started! Tell us where the issue is.
+Priority values are assigned using `IssuePriorityHelper` according to issue category. These values are demonstration rules and do not represent an official municipal prioritisation policy.
 
-> Great start! Now choose the type of issue.
+## Technologies and Requirements
 
-> You're halfway there! Please describe the problem.
+- C# and Windows Forms
+- **.NET Framework 4.8**
+- Microsoft Visual Studio with .NET desktop development support
+- Windows computer capable of running .NET Framework 4.8 applications
 
-> Almost done! You may attach supporting evidence.
+Git and GitHub may be used for source control but are not required to run the downloaded project.
 
-> Excellent! Your report is ready to submit.
+## Running the Application
 
-This provides immediate feedback and makes the reporting process easier to follow.
+1. Download or extract the project ZIP to a local folder.
+2. Open the included Visual Studio solution (`.sln` or `.slnx`, depending on the project copy) or the `MunicipalServicesApp.csproj` project file.
+3. If prompted, install the .NET Framework 4.8 targeting pack and Windows Forms development components.
+4. Select **Build > Build Solution** in Visual Studio.
+5. Press **F5** to run with debugging, or **Ctrl+F5** to run without debugging.
+6. Use the main menu to open **Report Issues**, **Local Events and Announcements**, or **Service Request Status**.
 
-### Input Validation
+### Suggested demonstration workflow
 
-The application validates required information before accepting a report.
+1. Open **Report Issues** and submit two or three issues in different categories. Keep their tracking IDs.
+2. Open **Service Request Status**, search for those IDs, and select requests in the table to view their details.
+3. Use the **View Highest Priority** feature to inspect the heap's highest-priority issue.
+4. Open **Municipal Network Analysis** and compare BFS, DFS, and minimum spanning tree results from different starting locations.
+5. Open **Local Events and Announcements** and try searching, category filtering, date filtering, and event recommendations.
 
-The following fields are required:
+## Project Organisation
 
-- Location
-- Category
-- Description
-
-Supporting evidence is optional.
-
-Users receive appropriate feedback when required information has not been provided.
-
-### Report Storage
-
-Submitted reports are represented using an `Issue` model and stored during runtime using an in-memory collection managed by `IssueRepository`.
-
-Each report contains information such as:
-
-- Location
-- Category
-- Description
-- Attachment path
-- Date reported
-
-After a successful submission, the application confirms that the issue has been stored and resets the reporting form for another submission.
-
----
-
-## Technologies Used
-
-- C#
-- .NET Framework
-- Windows Forms
-- Visual Studio
-- Git
-- GitHub
-
----
-
-## Project Structure
+Key source files include:
 
 ```text
 MunicipalServicesApp/
-│
-├── MunicipalServicesApp.slnx
-├── .gitignore
-├── README.md
-│
-└── MunicipalServicesApp/
-    ├── Models/
-    │   └── Issue.cs
-    │
-    ├── IssueRepository.cs
-    ├── MainMenuForm.cs
-    ├── MainMenuForm.Designer.cs
-    ├── ReportIssueForm.cs
-    ├── ReportIssueForm.Designer.cs
-    ├── Program.cs
-    ├── App.config
-    └── MunicipalServicesApp.csproj
+├── Models/
+│   ├── Issue.cs
+│   └── MunicipalEvent.cs
+├── Program.cs
+├── MainMenuForm.cs
+├── ReportIssueForm.cs
+├── LocalEventsForm.cs
+├── ServiceRequestStatusForm.cs
+├── MunicipalNetworkForm.cs
+├── IssueRepository.cs
+├── EventRepository.cs
+├── IssuePriorityHelper.cs
+├── IssueBinarySearchTree.cs
+├── IssueAVLTree.cs
+├── IssueMaxHeap.cs
+├── MunicipalGraph.cs
+├── MunicipalWeightedGraph.cs
+├── App.config
+└── MunicipalServicesApp.csproj
 ```
 
-Generated Visual Studio folders such as `.vs`, `bin`, and `obj` are excluded from the repository using `.gitignore`.
+Windows Forms designer files (`*.Designer.cs`) and resources accompany the corresponding forms.
 
----
+## Validation and Testing
 
-## How to Run the Application
+The application provides required-field validation when submitting reports and tracking-ID validation when searching. Invalid or missing request IDs produce user-facing feedback. Form navigation, event filtering, request details, priority lookup, BFS, DFS, and Prim's algorithm have been manually tested during development.
 
-### Requirements
-
-To open and run the project, you will need:
-
-- Windows
-- Visual Studio
-- .NET Framework development support
-
-### Running the Project
-
-1. Clone or download this repository.
-2. Open `MunicipalServicesApp.slnx` in Visual Studio.
-3. Allow Visual Studio to restore/load the project.
-4. Build the solution.
-5. Run the application using **Start** or press `F5`.
-
-The Municipal Services main menu will open.
-
-Select **Report Issues** to access the issue-reporting functionality.
-
----
-
-## Using the Report Issues Feature
-
-1. Enter the location of the municipal issue.
-2. Select an appropriate issue category.
-3. Describe the problem.
-4. Optionally attach supporting evidence.
-5. Follow the progress indicator and guidance messages.
-6. Click **Submit**.
-7. The application validates the information and stores the report.
-8. A confirmation message is displayed after successful submission.
-
-The **Back** button returns the user to the main menu.
-
----
-
-## Data Storage
-
-Part 1 currently uses **in-memory storage**.
-
-This means submitted reports remain available while the application is running but are not permanently stored after the application is closed.
-
-Persistent storage may be introduced as the application is expanded.
-
----
+These are developer-reported functional tests; the README is not a substitute for an automated test suite or independent assessment.
 
 ## Current Limitations
 
-This repository currently represents **Part 1** of the application.
+- **In-memory storage:** Reports and event-interest history are not saved to a database or persistent file. Session data is lost when the application exits.
+- **Attachments:** The application stores the selected attachment's file path; it does not copy or upload the file to a server.
+- **Request IDs:** Tracking IDs are generated from the current number of stored requests. This is suitable for the present append-only demonstration but should be replaced with a more durable identifier strategy before adding deletion or persistent storage.
+- **Request status:** There is no administrator interface or backend service to update request progress automatically.
+- **Sample events:** Event data is predefined and some dates may be in the past.
+- **Network analysis:** Graph connections and edge weights are fixed demonstration values.
+- **Platform:** The application is a Windows desktop application, not a web or mobile service.
 
-Therefore:
+## Potential Future Enhancements
 
-- Local Events and Announcements is not yet implemented.
-- Service Request Status is not yet implemented.
-- Reports are stored only in memory.
-- There is currently no database or permanent file-based storage.
-- The application is currently designed as a Windows desktop application.
-
----
-
-## Planned Development
-
-Future development of the Municipal Services Application will introduce additional functionality.
-
-### Part 2 — Local Events and Announcements
-
-The application will be expanded to provide access to local events and municipal announcements.
-
-This phase will introduce additional data structures and functionality for organising, searching, and recommending information.
-
-### Part 3 — Service Request Status
-
-The final phase will introduce functionality for tracking municipal service requests.
-
-This phase will expand the application through more advanced data structures and service-request management functionality.
-
----
-
-## User Interface
-
-The application has been designed with usability and simplicity in mind.
-
-Part 1 provides:
-
-- Clear navigation
-- Consistent form controls
-- User-friendly validation
-- Responsive progress feedback
-- Contextual guidance
-- File attachment support
-- Confirmation messages
-- Simple navigation between application screens
-
----
-
-## Development Status
-
-**Part 1 — Report Issues: COMPLETE ✅**
-
-**Part 2 — Local Events and Announcements: Planned**
-
-**Part 3 — Service Request Status: Planned**
-
----
-
-## Repository Notes
-
-Visual Studio-generated development files and build outputs are excluded through `.gitignore`.
-
-This keeps the repository focused on the source code and files required to build and understand the application.
-
----
+Possible extensions include persistent database storage, administrator workflows, file storage, user accounts, real municipal event feeds, and integration with live service-request systems. These are **not** part of the current implementation.
 
 ## Author
 
 **Millennium Msomi**
 
-Municipal Services Application  
-C# / .NET Framework / Windows Forms
+Municipal Services Application — C# / .NET Framework / Windows Forms

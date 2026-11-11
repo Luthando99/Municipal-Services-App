@@ -42,6 +42,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbCategory
@@ -50,7 +52,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(82, 163);
+            this.cmbCategory.Location = new System.Drawing.Point(82, 197);
             this.cmbCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(463, 31);
@@ -61,7 +63,7 @@
             // 
             this.rtbDescription.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.rtbDescription.Location = new System.Drawing.Point(82, 237);
+            this.rtbDescription.Location = new System.Drawing.Point(82, 271);
             this.rtbDescription.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rtbDescription.Name = "rtbDescription";
             this.rtbDescription.Size = new System.Drawing.Size(704, 70);
@@ -74,7 +76,7 @@
             this.btnAttachFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAttachFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAttachFile.Location = new System.Drawing.Point(82, 349);
+            this.btnAttachFile.Location = new System.Drawing.Point(82, 383);
             this.btnAttachFile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAttachFile.Name = "btnAttachFile";
             this.btnAttachFile.Size = new System.Drawing.Size(252, 40);
@@ -88,7 +90,7 @@
             this.progressReport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressReport.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.progressReport.Location = new System.Drawing.Point(82, 447);
+            this.progressReport.Location = new System.Drawing.Point(82, 481);
             this.progressReport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.progressReport.Name = "progressReport";
             this.progressReport.Size = new System.Drawing.Size(704, 33);
@@ -98,7 +100,7 @@
             // 
             this.lblAttachment.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAttachment.AutoSize = true;
-            this.lblAttachment.Location = new System.Drawing.Point(340, 366);
+            this.lblAttachment.Location = new System.Drawing.Point(340, 400);
             this.lblAttachment.Name = "lblAttachment";
             this.lblAttachment.Size = new System.Drawing.Size(101, 23);
             this.lblAttachment.TabIndex = 5;
@@ -107,33 +109,39 @@
             // btnSubmit
             // 
             this.btnSubmit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSubmit.Location = new System.Drawing.Point(569, 545);
+            this.btnSubmit.BackColor = System.Drawing.Color.MidnightBlue;
+            this.btnSubmit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Location = new System.Drawing.Point(569, 537);
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(99, 33);
+            this.btnSubmit.Size = new System.Drawing.Size(99, 41);
             this.btnSubmit.TabIndex = 6;
             this.btnSubmit.Text = "Submit";
-            this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // btnBack
             // 
             this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBack.BackColor = System.Drawing.Color.MidnightBlue;
             this.btnBack.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnBack.Location = new System.Drawing.Point(690, 545);
+            this.btnBack.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.ForeColor = System.Drawing.Color.White;
+            this.btnBack.Location = new System.Drawing.Point(687, 537);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(96, 32);
+            this.btnBack.Size = new System.Drawing.Size(99, 41);
             this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // txtLocation
             // 
             this.txtLocation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtLocation.Location = new System.Drawing.Point(82, 95);
+            this.txtLocation.Location = new System.Drawing.Point(82, 129);
             this.txtLocation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(704, 30);
@@ -143,7 +151,7 @@
             // lblEngagement
             // 
             this.lblEngagement.AutoSize = true;
-            this.lblEngagement.Location = new System.Drawing.Point(78, 420);
+            this.lblEngagement.Location = new System.Drawing.Point(78, 454);
             this.lblEngagement.Name = "lblEngagement";
             this.lblEngagement.Size = new System.Drawing.Size(331, 23);
             this.lblEngagement.TabIndex = 9;
@@ -152,27 +160,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 68);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(76, 102);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 23);
+            this.label1.Size = new System.Drawing.Size(88, 23);
             this.label1.TabIndex = 10;
             this.label1.Text = "Location: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(78, 210);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(78, 244);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 23);
+            this.label2.Size = new System.Drawing.Size(172, 23);
             this.label2.TabIndex = 11;
             this.label2.Text = "Description of Issue:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(76, 321);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(76, 355);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(171, 23);
+            this.label3.Size = new System.Drawing.Size(182, 23);
             this.label3.TabIndex = 12;
             this.label3.Text = "Supporting Evidence:";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -180,21 +191,32 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(78, 136);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(78, 170);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 23);
+            this.label4.Size = new System.Drawing.Size(89, 23);
             this.label4.TabIndex = 13;
             this.label4.Text = "Category:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(338, 20);
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(341, 20);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(241, 38);
+            this.label5.Size = new System.Drawing.Size(275, 41);
             this.label5.TabIndex = 14;
             this.label5.Text = "REPORT AN ISSUE";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.MidnightBlue;
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Location = new System.Drawing.Point(1, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(880, 80);
+            this.panel1.TabIndex = 15;
             // 
             // ReportIssueForm
             // 
@@ -203,7 +225,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnBack;
             this.ClientSize = new System.Drawing.Size(882, 601);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -222,8 +244,10 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ReportIssueForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "1";
+            this.Text = "Report an Issue";
             this.Load += new System.EventHandler(this.ReportIssueForm_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,5 +268,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel1;
     }
 }

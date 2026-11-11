@@ -14,6 +14,13 @@ namespace MunicipalServicesApp
     public partial class ReportIssueForm : Form
     {
         private string selectedFilePath = "";
+
+        private string GenerateTrackingID()
+        {
+            int nextNumber = IssueRepository.Issues.Count + 1;
+
+            return "REQ-" + nextNumber.ToString("D4");
+        }
         public ReportIssueForm()
         {
             InitializeComponent();
@@ -99,26 +106,38 @@ namespace MunicipalServicesApp
                 return;
             }
 
+
+
             Issue newIssue = new Issue
             {
+                TrackingID = GenerateTrackingID(),
                 Location = txtLocation.Text.Trim(),
                 Category = cmbCategory.SelectedItem.ToString(),
                 Description = rtbDescription.Text.Trim(),
                 AttachmentPath = selectedFilePath,
-                DateReported = DateTime.Now
+                DateReported = DateTime.Now,
+                Status = "Pending",
+                Priority = IssuePriorityHelper.GetPriority(
+                    cmbCategory.SelectedItem.ToString()
+                )
             };
+
+
 
             IssueRepository.Issues.Add(newIssue);
 
-            
 
             MessageBox.Show(
-                "Issue submitted successfully!\n\n" +
-                "Total reports stored: " + IssueRepository.Issues.Count,
-                "Report Submitted",
+                "Your municipal issue has been submitted successfully!\n\n" +
+                "Tracking ID: " + newIssue.TrackingID + "\n" +
+                "Status: " + newIssue.Status + "\n\n" +
+                "Please keep your tracking ID to monitor the progress " +
+                "of your service request.",
+                "Report Submitted Successfully",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
             );
+
 
             txtLocation.Clear();
             cmbCategory.SelectedIndex = -1;
